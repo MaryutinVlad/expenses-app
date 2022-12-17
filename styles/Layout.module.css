@@ -1,0 +1,9 @@
+.page {
+  box-sizing: border-box;
+  width: calc(100% - 60px);
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto 0;
+  font-family: monospace;
+  color: hsl(255, 5%, 16%);
+}
