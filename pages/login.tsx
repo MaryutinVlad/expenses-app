@@ -34,6 +34,7 @@ export default function Login() {
 
     if (token) {
       authContext.loggedIn = true
+      console.log(authContext)
       authRouter.push('/')
     }
   }

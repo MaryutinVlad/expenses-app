@@ -1,4 +1,4 @@
-import { ReactElement, ReactNode, useContext } from 'react'
+import { ReactElement, ReactNode } from 'react'
 import { NextPage } from 'next'
 import type { AppProps } from 'next/app'
 import '../styles/global.css'

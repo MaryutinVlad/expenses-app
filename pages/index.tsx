@@ -1,4 +1,4 @@
-import { ReactElement, useState, useContext } from "react"
+import { ReactElement, useState, useContext, useEffect } from "react"
 import { useRouter } from "next/router"
 import Layout from '../components/Layout'
 import AuthContext from "../contexts/Auth"
@@ -8,13 +8,14 @@ import styles from '../styles/Home.module.css'
 import type { NextPageWithLayout } from "./_app"
 
 const Page: NextPageWithLayout = () => {
-
   const router = useRouter()
   const authContext = useContext(AuthContext)
 
-  if (!authContext) {
-    router.push('/login')
-  }
+  useEffect(() => {
+    if (!authContext.loggedIn) {
+      router.push('/login')
+    }
+  }, [authContext.loggedIn])
 
   return (
     <main className={styles.container}>
