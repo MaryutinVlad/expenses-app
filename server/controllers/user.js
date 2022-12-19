@@ -3,11 +3,12 @@ const jwt = require('jsonwebtoken')
 const User = require('../models/users')
 
 module.exports.signUp = async (req, res) => {
+
   const password = await bcrypt.hash(req.body.password, 10)
   const user = new User({...req.body, password: password})
 
   await user.save()
-  return res.json(await User.find(user))
+  return res.json(await User.findOne(user))
 }
 
 module.exports.login = async (req, res) => {

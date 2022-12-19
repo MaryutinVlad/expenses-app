@@ -2,10 +2,5 @@
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  padding: 0 30px;
-  background-color: antiquewhite;
-}
-
-.title {
-  background-color: aqua;
+  padding: 20px 30px;
 }

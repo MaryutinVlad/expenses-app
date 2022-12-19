@@ -1,0 +1,47 @@
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(251, 251, 251, 0.5);
+}
+
+.title {
+  margin: 15px auto 5px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px 0;
+  width: 25%;
+  margin: auto;
+  box-sizing: border-box;
+  padding: 0 20px 15px;
+  border-radius: 10px;
+  background-color: rgb(214, 213, 213);
+  font-family: monospace;
+}
+
+.button {
+  width: 30%;
+  font-family: monospace;
+  font-size: 1rem;
+  border: 0;
+  border-radius: 10px;
+  margin: 10px 0 2px auto;
+  box-sizing: border-box;
+  padding: 7px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: white;
+}
+
+.link {
+  font-size: .9rem;
+}
