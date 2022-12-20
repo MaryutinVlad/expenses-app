@@ -4,6 +4,7 @@ import styles from '../styles/Header.module.css'
 import testAvatar from '../../progress-tracker/src/images/testImage.png'
 
 function Header() {
+
   return (
     <header className={styles.container}>
       <h1 className={styles.title}>
@@ -16,7 +17,7 @@ function Header() {
           alt="Paika"
         />
         <span>
-          Paika
+          ppp
         </span>
       </div>
     </header>

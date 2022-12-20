@@ -1,16 +1,20 @@
-import Link from 'next/link'
-import { useRef, useContext } from 'react'
 import { useRouter } from 'next/router'
+import Link from 'next/link'
+import { useRef } from 'react'
 
-import AuthContext from '../contexts/Auth'
 import styles from '../styles/Auth.module.css'
+import { useUser } from '../contexts/User'
 
 export default function Login() {
 
-  const authRouter = useRouter()
-  const authContext = useContext(AuthContext)
+  const user = useUser()
+  const router = useRouter()
   const emailRef = useRef<HTMLInputElement>(null)
   const passwordRef = useRef<HTMLInputElement>(null)
+
+  if (user) {
+    router.push('/')
+  }
 
   async function loginUser(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -33,9 +37,8 @@ export default function Login() {
     const token = await res.json()
 
     if (token) {
-      authContext.loggedIn = true
-      console.log(authContext)
-      authRouter.push('/')
+      localStorage.setItem('expenses-app', JSON.stringify(token))
+      router.push('/')
     }
   }
 

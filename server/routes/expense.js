@@ -1,14 +1,14 @@
 const expenseRouter = require('express').Router()
 
 const {
-  getExpanses,
+  getExpenses,
   createItemOfExpenditure,
   deleteItemOfExpenditure,
   addExpense,
   deleteExpense
 } = require('../controllers/expense')
 
-expenseRouter.get('/', getExpanses)
+expenseRouter.get('/', getExpenses)
 
 expenseRouter.post('/', createItemOfExpenditure)
 

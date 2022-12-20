@@ -3,13 +3,19 @@ import { useRef } from 'react'
 import { useRouter } from 'next/router'
 
 import styles from '../styles/Auth.module.css'
+import { useUser } from '../contexts/User'
 
 export default function SignUp() {
 
-  const authRouter = useRouter()
+  const user = useUser()
+  const router = useRouter()
   const nameRef = useRef<HTMLInputElement>(null)
   const emailRef = useRef<HTMLInputElement>(null)
   const passwordRef = useRef<HTMLInputElement>(null)
+
+  if (user) {
+    router.push('/')
+  }
 
   async function createAccount(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -32,7 +38,7 @@ export default function SignUp() {
 
     const user = await res.json()
     if (user) {
-      authRouter.push('/login')
+      router.push('/login')
     }
   }
 

@@ -34,3 +34,8 @@ module.exports.logOut = async () => {
   req.user = null
   return res.json('Logged out')
 }
+
+module.exports.getUser = async (req, res) => {
+  const user = jwt.verify(req.params.token, process.env.SECRET)
+  return res.json(await User.findOne({ email: user.email }))
+}

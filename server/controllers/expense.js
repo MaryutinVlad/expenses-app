@@ -1,6 +1,6 @@
 const Expense = require('../models/expenses')
 
-module.exports.getExpanses = async (req, res) => {
+module.exports.getExpenses = async (req, res) => {
   const data = await Expense.find({ owner: req.user })
   return res.json(data)
 }
