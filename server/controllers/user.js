@@ -39,3 +39,8 @@ module.exports.getUser = async (req, res) => {
   const user = jwt.verify(req.params.token, process.env.SECRET)
   return res.json(await User.findOne({ email: user.email }))
 }
+
+module.exports.getAny = async (req, res) => {
+  const user = await User.findOne({})
+  return await res.json(user)
+}
